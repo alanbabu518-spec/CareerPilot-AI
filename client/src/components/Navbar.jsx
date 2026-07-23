@@ -23,20 +23,20 @@ function Navbar() {
                         </h1>
                     </div>
                     <ul className="hidden md:flex items-center gap-10 text-white font-medium">
-                        <li className="hover:text-purple-400 transition duration-300 cursor-pointer">
+                        <Link to="/" className="hover:text-purple-400 transition duration-300 cursor-pointer">
                             Home
-                        </li>
+                        </Link>
 
                         <li className="hover:text-purple-400 transition duration-300 cursor-pointer">
                             Features
                         </li>
 
-                        <li className="hover:text-purple-400 transition duration-300 cursor-pointer">
+                        <Link to="/About" className="hover:text-purple-400 transition duration-300 cursor-pointer">
                             About
-                        </li>
+                        </Link>
 
                         <li className="hover:text-purple-400 transition duration-300 cursor-pointer">
-                            Pricing
+                            Premium
                         </li>
                     </ul>
             
