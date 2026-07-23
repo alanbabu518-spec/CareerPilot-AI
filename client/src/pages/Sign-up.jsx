@@ -5,6 +5,7 @@ import { use } from "react";
 import BASE_URL from "../services/api";
 import {ToastContainer,toast} from "react-toastify"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SignUp() {
 
@@ -14,34 +15,27 @@ function SignUp() {
   const [password,setPassword] = useState("")
 
   const handleSubmit= async(e) =>{
-    e.preventDefault()
+   try{
+     e.preventDefault()
 
-    const response = await fetch(
+    const response = await axios.post(
       `${BASE_URL}/api/users/Signup`,
       {
-        method:"POST",
-        headers : {
-          "content-type" : "application/json",
-        },
-        body : JSON.stringify({
           name,
           email,
           password
-        })
+      },
+      {
+        withCredentials : true,
       }
     )
-    const data = await response.json()
-
-    if(response.ok){
-      localStorage.setItem("token",data.token)
-      localStorage.setItem("username",data.name)
-      toast.success("your signed up")
-      navigate("/")
-    }
-    else{
-      toast.error("Something Wrong")
-    }
-
+    const data = response.data
+    toast.success("Your Signed Up Successfully")
+    navigate("/")
+   }
+   catch(error){
+    toast.error(error.response.data.message)
+   }
   }
   
   return (

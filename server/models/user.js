@@ -1,6 +1,4 @@
 const mongoose = require("mongoose")
-const { timeStamp } = require("node:console")
-const { type } = require("node:os")
 
 const userSchema = new mongoose.Schema({
     name : {

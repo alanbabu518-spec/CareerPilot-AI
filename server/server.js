@@ -4,13 +4,18 @@ const connectdb  = require("./config/db")
 const dotenv = require("dotenv")
 dotenv.config()
 const UserRoute = require("./routes/userRoute")
+const cookieParser = require("cookie-parser")
 
 connectdb();
 console.log("Database is Connected")
 
 const app = express();
 app.use(express.json())
-app.use(cors())
+app.use(cookieParser())
+app.use(cors({
+    origin : "http://localhost:5173",
+    credentials : true
+}))
 
 app.use("/api/users",UserRoute)
 
