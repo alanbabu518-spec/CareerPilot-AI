@@ -68,11 +68,9 @@ function Navbar() {
         </div>
       )}
 
-      {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-purple-900/30">
         <div className="max-w-7xl mx-auto px-3 lg:px-10">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
                 <AiFillAliwangwang className="w-8 h-8 text-white" />
@@ -84,7 +82,6 @@ function Navbar() {
               </h1>
             </Link>
 
-            {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-10 text-white font-medium">
               <Link
                 to="/"
@@ -94,6 +91,7 @@ function Navbar() {
               </Link>
 
               <li className="hover:text-purple-400 cursor-pointer">Features</li>
+              <li className="hover:text-purple-400 cursor-pointer">Services</li>
 
               <Link
                 to="/About"
@@ -102,10 +100,9 @@ function Navbar() {
                 About
               </Link>
 
-              <li className="hover:text-purple-400 cursor-pointer">Premium</li>
+              <li className="hover:text-purple-400 cursor-pointer">Pricing</li>
             </ul>
 
-            {/* Right Section */}
             <div className="hidden md:flex items-center justify-end w-52">
               {userName ? (
                 <div
@@ -133,7 +130,6 @@ function Navbar() {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden text-white"
@@ -142,17 +138,17 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden bg-[#111111] rounded-xl p-6 mb-4">
               <ul className="flex flex-col gap-5 text-white font-medium">
                 <Link to="/">Home</Link>
 
                 <li>Features</li>
+                <li>Services</li>
 
                 <Link to="/About">About</Link>
 
-                <li>Premium</li>
+                <li>Pricing</li>
               </ul>
 
               {!userName && (
