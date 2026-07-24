@@ -23,6 +23,7 @@ function SignIn() {
     withCredentials : true,
   })
     const data = response.data
+    localStorage.setItem("userName", response.data.name);
     toast.success("Your Signed In Sucessfully")
     navigate("/")
     }

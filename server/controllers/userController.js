@@ -60,7 +60,7 @@ const userSignIn = async(req,res) =>{
     const {email,password} = req.body
     const userExist = await user.findOne({email})
 
-    if(!user){
+    if(!userExist){
         return res.status(400).json({
             message : "Inavalid Email or Password"
         })
@@ -86,6 +86,7 @@ const userSignIn = async(req,res) =>{
     return res.status(200).json({
         message: "lgin Sucessfull",
         _id : userExist._id,
+        name: userExist.name,
         email : userExist.email,
     })
   }
@@ -97,4 +98,12 @@ const userSignIn = async(req,res) =>{
 
 }
 
-module.exports = {userSignUp,userSignIn}
+const userSignOut = async(req,res)=>{
+    res.clearCookie("token")
+
+    res.json({
+        messge:"Signed Out Successfully"
+    })
+}
+
+module.exports = {userSignUp,userSignIn,userSignOut}
