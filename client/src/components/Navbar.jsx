@@ -90,7 +90,6 @@ function Navbar() {
                 Home
               </Link>
 
-              <li className="hover:text-purple-400 cursor-pointer">Features</li>
               <li className="hover:text-purple-400 cursor-pointer">Services</li>
 
               <Link
@@ -143,7 +142,6 @@ function Navbar() {
               <ul className="flex flex-col gap-5 text-white font-medium">
                 <Link to="/">Home</Link>
 
-                <li>Features</li>
                 <li>Services</li>
 
                 <Link to="/About">About</Link>

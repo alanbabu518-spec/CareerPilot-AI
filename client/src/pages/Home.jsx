@@ -1,5 +1,8 @@
 import Navbar from "../components/Navbar";
 import HeroBanner from "../components/HeroBanner";
+import Services from "../Sections/Services";
+import HowItWorks from "../Sections/Howitworks";
+import Pricing from "../Sections/Pricing";
 
 function Home() {
   return (
@@ -11,8 +14,10 @@ function Home() {
       <div className="relative z-10">
         <Navbar />
         <HeroBanner />
+        <Services />
+        <HowItWorks />
+        <Pricing />
       </div>
-
     </div>
   );
 }
