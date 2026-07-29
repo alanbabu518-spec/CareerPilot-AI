@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, User, Settings, LogOut, ArrowLeftRight } from "lucide-react";
 import { AiFillAliwangwang } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,10 @@ function Navbar() {
           </div>
 
           <div className="px-6 space-y-4">
-            <Link to="/SignIn" className="w-full flex items-center gap-4 bg-white/5 hover:bg-purple-600 rounded-xl px-5 py-4 text-white transition">
+            <Link
+              to="/SignIn"
+              className="w-full flex items-center gap-4 bg-white/5 hover:bg-purple-600 rounded-xl px-5 py-4 text-white transition"
+            >
               <ArrowLeftRight size={22} />
               Switch Account
             </Link>
@@ -90,7 +94,12 @@ function Navbar() {
                 Home
               </Link>
 
-              <li className="hover:text-purple-400 cursor-pointer">Services</li>
+              <ScrollLink
+                to="services"
+                className="cursor-pointer hover:text-purple-400 transition"
+              >
+                Services
+              </ScrollLink>
 
               <Link
                 to="/About"
@@ -98,8 +107,12 @@ function Navbar() {
               >
                 About
               </Link>
-
-              <li className="hover:text-purple-400 cursor-pointer">Pricing</li>
+              <ScrollLink
+                to="pricing"
+                className="cursor-pointer hover:text-purple-400 transition"
+              >
+                Pricing
+              </ScrollLink>
             </ul>
 
             <div className="hidden md:flex items-center justify-end w-52">

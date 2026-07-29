@@ -48,7 +48,7 @@ function Services() {
   ];
 
   return (
-    <section className="relative py-28 bg-black overflow-hidden">
+    <section id="services" className="relative py-28 bg-black overflow-hidden">
       <div className="absolute -top-40 right-0 w-[420px] h-[420px] rounded-full bg-violet-700/20 blur-[170px]" />
       <div className="absolute bottom-0 left-0 w-[420px] h-[420px] rounded-full bg-purple-700/20 blur-[170px]" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
