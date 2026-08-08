@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin : "https://career-pilot-ai-orpin.vercel.app/",
+    origin : "https://career-pilot-ai-orpin.vercel.app",
     credentials : true
 }))
 
