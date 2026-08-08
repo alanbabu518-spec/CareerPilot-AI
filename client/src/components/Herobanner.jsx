@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ArrowRight, Sparkles } from "lucide-react";
+import heroData from "./Herodata";
 
 function HeroBanner() {
   return (
