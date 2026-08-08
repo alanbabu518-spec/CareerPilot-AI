@@ -7,53 +7,71 @@ import {
   MessageSquareCode,
 } from "lucide-react";
 
-function Services() {
+import { useNavigate } from "react-router-dom";
+
+export const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
-      icon: <FileText size={38} />,
+      icon: <FileText size={30} />,
       title: "Resume Builder",
       description:
         "Create professional ATS-friendly resumes using intelligent AI templates designed for modern recruitment.",
+      path: "/resumebuilder",
     },
     {
-      icon: <ScanSearch size={38} />,
+      icon: <ScanSearch size={30} />,
       title: "Resume Review",
       description:
         "Upload your resume and receive AI-powered feedback to improve formatting, keywords, and overall quality.",
+      path: "/resume-analyzer",
     },
     {
-      icon: <Briefcase size={38} />,
+      icon: <GraduationCap size={30} />,
       title: "Interview Preparation",
       description:
         "Practice HR and technical interviews with AI-generated questions and receive instant performance feedback.",
+      path: "/interview-preparation",
     },
     {
-      icon: <GraduationCap size={38} />,
+      icon: <Briefcase size={30} />,
       title: "Career Guidance",
       description:
         "Receive personalized career recommendations, roadmaps, and job role suggestions based on your goals.",
+      path: "/career-guidance",
     },
     {
-      icon: <BookOpen size={38} />,
+      icon: <BookOpen size={30} />,
       title: "Learning Recommendations",
       description:
         "Discover the best courses, certifications, projects, and learning resources tailored to your career path.",
+      path: "/learning",
     },
     {
-      icon: <MessageSquareCode size={38} />,
+      icon: <MessageSquareCode size={30} />,
       title: "AI Career Assistant",
       description:
         "Ask anything about careers, resumes, interviews, skills, or projects and receive intelligent AI assistance.",
+      path: "/ai-assistant",
     },
   ];
 
+  const handleNavigate = (path) => {
+  window.scrollTo(0, 0);
+  navigate(path);
+};
+
   return (
-    <section id="services" className="relative py-28 bg-black overflow-hidden">
-      <div className="absolute -top-40 right-0 w-[420px] h-[420px] rounded-full bg-violet-700/20 blur-[170px]" />
-      <div className="absolute bottom-0 left-0 w-[420px] h-[420px] rounded-full bg-purple-700/20 blur-[170px]" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section
+      id="services"
+      className="bg-black text-white py-24"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+
         <div className="text-center mb-16">
-          <span className="uppercase tracking-[5px] text-violet-400 font-semibold">
+
+          <span className="text-violet-400 font-semibold tracking-widest uppercase text-sm">
             Services
           </span>
 
@@ -62,41 +80,75 @@ function Services() {
           </h2>
 
           <p className="text-gray-400 mt-6 max-w-3xl mx-auto text-lg leading-8">
-            CareerPilot AI offers everything you need to prepare for your dream
-            career—from building an ATS-friendly resume to mastering interviews
-            and receiving personalized AI career guidance.
+            CareerPilot AI offers everything you need to prepare for your
+            dream career—from building an ATS-friendly resume to mastering
+            interviews and receiving personalized AI career guidance.
           </p>
+
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           {services.map((service, index) => (
+
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition duration-500 hover:-translate-y-3 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.35)]"
+              onClick={() => handleNavigate(service.path)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  handleNavigate(service.path);
+                }
+              }}
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition duration-500 hover:-translate-y-3 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.35)] cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/0 to-purple-700/0 group-hover:from-violet-600/10 group-hover:to-purple-700/10 transition duration-500"></div>
+
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/0 to-purple-700/0 group-hover:from-violet-600/10 group-hover:to-purple-700/10 transition duration-500 pointer-events-none">
+              </div>
 
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-700 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition">
+
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-700 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition duration-300">
+
                   {service.icon}
+
                 </div>
 
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-400 leading-7">{service.description}</p>
+                <p className="text-gray-400 leading-7">
+                  {service.description}
+                </p>
 
-                <button className="mt-8 text-violet-400 font-semibold hover:text-white transition">
-                  Learn More →
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNavigate(service.path);
+                  }}
+                  className="mt-8 text-violet-400 font-semibold hover:text-white transition inline-flex items-center gap-1"
+                >
+                  Learn More
+                  <span className="group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
                 </button>
+
               </div>
+
             </div>
+
           ))}
+
         </div>
 
         <div className="mt-24 rounded-3xl border border-violet-500/20 bg-gradient-to-r from-violet-900/30 to-purple-900/30 backdrop-blur-xl p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+
           <div>
+
             <h3 className="text-3xl font-bold text-white">
               Ready to Accelerate Your Career?
             </h3>
@@ -106,12 +158,19 @@ function Services() {
               interviews, identify your skill gaps, and build a personalized
               roadmap toward your dream job.
             </p>
+
           </div>
 
-          <button className="px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-purple-700 text-white font-semibold hover:scale-105 transition shadow-lg shadow-violet-700/30">
+          <button
+            type="button"
+            onClick={() => navigate("/resume-builder")}
+            className="px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-purple-700 text-white font-semibold hover:scale-105 transition shadow-lg shadow-violet-700/30 whitespace-nowrap"
+          >
             Get Started Free
           </button>
+
         </div>
+
       </div>
     </section>
   );

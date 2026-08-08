@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import About from './pages/About'
 import SignIn from './pages/Sign-in'
 import SignUp from './pages/Sign-up'
+import { ResumeBuilder } from './pages/Resumebuilder'
 import { ToastContainer } from 'react-toastify'
 
 
@@ -15,6 +16,7 @@ function App() {
       <Route path='/About' element={<About />} />
       <Route path='/SignIn' element={<SignIn />} />
       <Route path='/SignUp' element={<SignUp />} />
+      <Route path='/Resumebuilder' element={<ResumeBuilder />} />
      </Routes>
 
      <ToastContainer position="top-center" />
