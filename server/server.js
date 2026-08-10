@@ -16,7 +16,7 @@ app.use(cors(
     {
     origin : 
         "https://career-pilot-ai-orpin.vercel.app",
-         credentials : true
+        credentials : true
 }
 ))
 
