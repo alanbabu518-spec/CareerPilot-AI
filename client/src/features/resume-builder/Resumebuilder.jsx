@@ -1,25 +1,21 @@
 import { useState } from "react";
 import { Save, Download, Sparkles, Eye } from "lucide-react";
-
 import { Link } from "react-router-dom";
-
-import BuilderSidebar from "../components/resume-builder/BuilderSidebar";
-import PersonalInfo from "../components/resume-builder/PersonalInfo";
-import Summary from "../components/resume-builder/ProffesionalSummery";
-import Education from "../components/resume-builder/Education";
-import ResumePreview from "../components/resume-builder/ResumePreview";
-import Experience from "../components/resume-builder/Experience";
-import Skills from "../components/resume-builder/Skills";
-import Projects from "../components/resume-builder/Project";
-import Certifications from "../components/resume-builder/Certifications";
-import Languages from "../components/resume-builder/Languages";
-import Achievements from "../components/resume-builder/Achievements";
+import BuilderSidebar from "./components/BuilderSidebar";
+import PersonalInfo from "./components/PersonalInfo";
+import Summary from "./components/ProffesionalSummery";
+import Education from "./components/Education";
+import ResumePreview from "./components/ResumePreview";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
+import Projects from "./components/Project";
+import Certifications from "./components/Certifications";
+import Languages from "./components/Languages";
+import Achievements from "./components/Achievements";
 
 export const ResumeBuilder = () => {
   const [activeSection, setActiveSection] = useState("personal");
-
   const [mobileView, setMobileView] = useState("editor");
-
   const [resume, setResume] = useState({
     personal: {
       fullName: "",
@@ -49,14 +45,18 @@ export const ResumeBuilder = () => {
     achievements: [],
   });
 
-  const [template, setTemplate] = useState("modern");
+  const [template, setTemplate] = useState(
+    "modern",
+    "professional",
+    "minimal",
+    "creative",
+    "executive",
+  );
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
-
       <header className="sticky top-0 z-40 h-16 bg-[#090909]/95 backdrop-blur-xl border-b border-white/10">
         <div className="h-full px-4 lg:px-6 flex items-center justify-between">
-
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-600 to-purple-700 flex items-center justify-center">
               <Sparkles size={18} />
@@ -137,7 +137,6 @@ export const ResumeBuilder = () => {
 
       <main className="max-w-[19000px] mx-auto p-4 lg:p-6">
         <div className="grid lg:grid-cols-[280px_minmax(0,0.99fr)_520px] gap-6 items-start">
-
           <div
             className={`${
               mobileView === "editor" ? "block" : "hidden"
@@ -148,7 +147,6 @@ export const ResumeBuilder = () => {
               setActiveSection={setActiveSection}
             />
           </div>
-
 
           <div
             className={`${

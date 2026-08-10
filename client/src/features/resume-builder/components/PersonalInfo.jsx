@@ -14,7 +14,6 @@ function PersonalInfo({ resume, setResume }) {
 
   return (
     <div className="bg-[#0d0d0d] border border-white/10 rounded-2xl p-6">
-
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 rounded-xl bg-violet-600/15 flex items-center justify-center">
           <User className="text-violet-400" size={20} />
@@ -30,7 +29,6 @@ function PersonalInfo({ resume, setResume }) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-
         <div className="md:col-span-2">
           <label className="block text-sm font-medium text-gray-300 mb-2">
             Full Name
@@ -75,7 +73,7 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.email}
               onChange={(e) => handleChange("email", e.target.value)}
               placeholder="you@example.com"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>
@@ -96,7 +94,7 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
               placeholder="+91 98765 43210"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>
@@ -117,7 +115,7 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.location}
               onChange={(e) => handleChange("location", e.target.value)}
               placeholder="City, Country"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>
@@ -138,12 +136,10 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.website}
               onChange={(e) => handleChange("website", e.target.value)}
               placeholder="https://yourportfolio.com"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>
-
-        {/* LinkedIn */}
 
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -161,12 +157,10 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.linkedin}
               onChange={(e) => handleChange("linkedin", e.target.value)}
               placeholder="linkedin.com/in/yourname"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>
-
-        {/* GitHub */}
 
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -184,7 +178,7 @@ function PersonalInfo({ resume, setResume }) {
               value={resume.personal.github}
               onChange={(e) => handleChange("github", e.target.value)}
               placeholder="github.com/yourusername"
-              className="resume-input pl-11"
+              className="resume-input !pl-11"
             />
           </div>
         </div>

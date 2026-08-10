@@ -12,10 +12,13 @@ console.log("Database is Connected")
 const app = express();
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({
-    origin : "https://career-pilot-ai-orpin.vercel.app",
-    credentials : true
-}))
+app.use(cors(
+    {
+    origin : 
+        "https://career-pilot-ai-orpin.vercel.app",
+         credentials : true
+}
+))
 
 app.use("/api/users",UserRoute)
 

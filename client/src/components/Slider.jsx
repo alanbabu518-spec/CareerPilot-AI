@@ -3,8 +3,8 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-import img1 from "../assets/CareerPilot.img1.jpg";
-import img2 from "../assets/CareerPilot.img2.jpg";
+import img1 from "../assets/CareerPilot.img1.png";
+import img2 from "../assets/CareerPilot.img2.png";
 import img3 from "../assets/CareerPilot.img3.jpg";
 import img4 from "../assets/CareerPilot.img4.jpg";
 

@@ -30,6 +30,7 @@ function SignUp() {
       }
     )
     const data = response.data
+    localStorage.setItem("userName", response.data.name);
     toast.success("Your Signed Up Successfully")
     navigate("/")
    }
